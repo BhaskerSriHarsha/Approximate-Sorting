@@ -25,30 +25,26 @@ int main()
     int InputIndexPointer,res=0;
     int IndexOfEmptyCell=0;
     int NumberOfElementsInArray=0;
-    int array[200];
+    int array[NumberOfElements];
     priority_queue < int, deque <int>, greater<int> > H1; //min-heap
 
 
-    for (InputIndexPointer=0;InputIndexPointer<=Input.length();InputIndexPointer++)
+    for (InputIndexPointer=0;Input[InputIndexPointer]!='\0';)
     {
-      if(Input[InputIndexPointer] == ' ' or Input[InputIndexPointer] == '\0' )
+      if(Input[InputIndexPointer] != ' ' and Input[InputIndexPointer] != '\0' )
       {
+        while(Input[InputIndexPointer] != ' ' and Input[InputIndexPointer] != '\0')
+        {
+         res = (res*10) + (Input[InputIndexPointer]-48);
+         InputIndexPointer++;
+        }
         array[IndexOfEmptyCell]=res;
         IndexOfEmptyCell++;
         res=0;
-        InputIndexPointer=InputIndexPointer+1;
-        if(Input[InputIndexPointer]== '\0')
-        {
-          break;
-        }
-        else
-        {
-          InputIndexPointer=InputIndexPointer-1;
-        }
       }
       else
       {
-        res = (res*10) + (Input[InputIndexPointer]-48);
+        InputIndexPointer++;
       }
     }
 
@@ -102,10 +98,7 @@ int main()
         cout<<DisplayElement<<" ";
       }
       cout<<endl;
-      //then push the 51 element and so on till all the elements are exhausted ie NUmber of elements
     }
-
-
+    
   }
-
 }
