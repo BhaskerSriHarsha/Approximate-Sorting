@@ -1,4 +1,4 @@
-# Approximate-Sorting
+# Approximate-Sorting (Space)
 Performing approximate sorting in C++
 
 Problem:
